@@ -1,0 +1,98 @@
+
+<!--ここから新規登録・ログインモーダル-->
+<div class="sign_modal_wrapper"></div>
+
+<div class="sign_modal">
+  <span class="fa_wrapper"></span>
+  <div class="sign_up_modal sign_modal_content">
+    <h2>新規登録フォーム<i class="far fa-times-circle"></i></h2>
+    <form class="new_user"action="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="0vopqXSAxej0lk4KKOWG+YUcG2s5X+btIeQBKegvkob1KNqBEYUcJjZXNJ9bYJDpL+8AncJ0uHNFA4luEVFTAg==">
+      <div class="field">
+        <label for="user_email">いーめーる</label><br>
+        <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]">
+      </div>
+
+      <div class="field">
+        <label for="user_name">にっくねーむ</label><br>
+        <input autofocus="autofocus" class="form-control" autocomplete="name" type="text" name="user[name]" id="user_name">
+      </div>
+
+      <div class="field">
+        <label for="user_password">ぱすわーど</label>
+        <br>
+        <input autocomplete="new-password" type="password" name="user[password]" aria-autocomplete="list">
+      </div>
+
+      <div class="field">
+        <label for="user_password_confirmation">再入力</label><br>
+        <input autocomplete="new-password" type="password" name="user[password_confirmation]">
+      </div>
+
+      <div class="actions">
+        <input type="submit" name="commit" value="新規登録" data-disable-with="Sign up">
+      </div>
+    </form>
+  </div>
+
+  <div class="sign_in_modal sign_modal_content">
+    <h2>ログインフォーム<i class="far fa-times-circle"></i></h2>
+    <form class="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="oHLlAj0JDR0syLFJq8pvBZgP3Tf2VBOuOl5VCtX7PkCHoBYqWAzU0+4Jy9zYT3kVMvzGwQ1/TTBeud1NLIX/xA==">
+      <div class="field">
+        <label for="user_email">いーめーる</label><br>
+        <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]">
+      </div>
+
+      <div class="field">
+        <label for="user_password">ぱすわーど</label><br>
+        <input autocomplete="current-password" type="password" name="user[password]">
+      </div>
+
+      <div class="actions">
+        <input type="submit" name="commit" value="ログイン" data-disable-with="Log in">
+      </div>
+    </form>
+  </div>
+
+</div>
+<!--ここまで新規登録・ログインモーダル-->
+<!--ここからDIY記事の新規投稿フォームのモーダル-->
+<div class="post_modal_wrapper"></div>
+<div class="new_post_modal">
+  <div class="post_modal post_modal_content">
+    <h2>DIY新規投稿<i class="far fa-times-circle"></i></h2>
+
+    <%= form_with model: @new_diy, local: true do |f| %>
+      <%= f.label :image %>
+      <%= f.attachment_field :image %><br>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %><br>
+
+      <%= f.label :body %>
+      <%= f.text_area :body %><br>
+
+      <%= f.label :material %>
+      <%= f.text_area :material %><br>
+
+      <%= f.label :price %>
+      <%= f.number_field :price %><br>
+
+      <%= f.submit "投稿" %>
+    <% end %>
+  </div>
+</div>
+<!--ここまでDIY記事の新規投稿フォームのモーダル-->
+
+<div class="main-wrapper">
+
+<!--ここから投稿済みのDIY記事を一覧表示-->
+<%= render partial:"homes/diys", locals: {diys: @diys} %>
+<!--ここまで投稿済みのDIY記事を一覧表示-->
+
+
+</div>
+
+
+<footer>
+  <p class="copyright">© 2021 ryota35</p>
+</footer>

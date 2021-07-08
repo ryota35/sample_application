@@ -1,0 +1,268 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require_font-awesome
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f5f4;
+  font-family: 'HanziPen SC','Helvetica Neue','Avenir','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+}
+
+header {
+
+  background-color: #f1f1f1;
+}
+
+.header_contents {
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul {
+    display: flex;
+    li {
+      margin-right: 30px;
+      list-style: none;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.logo {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+  text-shadow: gray 1px 1px 3px;
+  text-decoration: none;
+  color: brown;
+}
+
+.main-wrapper {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+// ここから新規登録・ログインモーダル
+
+.sign_button {
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid black;
+  padding: 5px;
+  opacity: .6;
+  transition: .3s;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.sign_up_button {
+  margin-right: 30px;
+}
+
+.sign_modal_wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: .7;
+  display: none;
+}
+
+.sign_modal {
+  position: absolute;
+  background-color: #fff;
+  width: 450px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 100px auto 0;
+  border: 1px solid #eee;
+  display: none;
+  text-align: right;
+}
+
+.sign_modal_content {
+  display: none;
+  text-align: center;
+}
+
+.fa_wrapper {
+  cursor: pointer;
+  margin: 3px 3px 0 0;
+}
+
+.fa-times-circle {
+  cursor: pointer;
+}
+
+// ここまで新規登録・ログインモーダル
+
+// ここからDIY記事の新規投稿フォームのモーダル
+
+.post_modal_wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.7;
+  display: none;
+}
+
+.new_post_modal {
+  display: none;
+}
+
+.post_modal {
+  position: absolute;
+  background-color: #fff;
+  width: 450px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 100px auto 0;
+  border: 1px solid #eee;
+  display: none;
+  text-align: right;
+}
+
+.post_modal_content {
+  display: none;
+  text-align: center;
+}
+
+// ここまでDIY記事の新規投稿フォームのモーダル
+
+// ここからDIY記事の一覧
+
+.diy-list {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.diy-content {
+  width: 30%;
+  border-radius: 10px;
+  margin-left: 3%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 10px;
+}
+
+.diy-info {
+  padding: 0 0 10px 10px;
+  p {
+    margin-top: 5px;
+  }
+}
+
+.diy-image {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+// ここまでDIY記事の一覧
+
+// ここからクリックしたDIY記事を表示
+
+.detail-wrapper {
+  margin-top: 30px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+.detail-content {
+  width: 60%;
+}
+
+.delete-or-update {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.delete-button {
+  display: inline-block;
+  background-color: red;
+  text-decoration: none;
+  color: black;
+  padding: 20px 40px;
+}
+
+.edit-button {
+  display: inline-block;
+  background-color: lightgreen;
+  text-decoration: none;
+  color: black;
+  padding: 20px 40px;
+  margin-top: 10px;
+}
+
+// ここまでクリックしたDIY記事を表示
+
+// ここからクリックしたDIY記事編集画面
+
+.edit-wrapper {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+// ここまでクリックしたDIY記事編集画面
+
+// ここからfooter
+
+footer {
+  height: 150px;
+  background-color: #f1f1f1;
+  margin-top: 50px;
+}
+
+.copyright {
+  text-align: center;
+  line-height: 150px;
+}
+
+// ここまでfooter

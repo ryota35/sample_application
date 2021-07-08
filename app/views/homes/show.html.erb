@@ -1,0 +1,17 @@
+<div class="detail-wrapper">
+  <div class="detail-content">
+    <p><%= attachment_image_tag @diy, :image, format: 'jpeg', class: 'detail-image' %></p>
+    <p><%= @diy.user.name %></p>
+    <p>タイトル:<%= @diy.title %></p>
+    <p><%= @diy.body %></p>
+    <p>予算:<%= @diy.price %>円</p>
+    <p><%= @diy.created_at.strftime("%Y-%m-%d") %></p>
+  </div>
+  
+  <div class="delete-or-update">
+    <% if @diy.user == current_user %>
+      <%= link_to '削除', diy_detail_path(@diy), method: :delete, class: 'delete-button' %>
+      <%= link_to '編集', edit_diy_detail_path(@diy), class: 'edit-button' %>
+    <% end %>
+  </div>
+</div>

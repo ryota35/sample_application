@@ -1,0 +1,2 @@
+module DiyDetailsHelper
+end

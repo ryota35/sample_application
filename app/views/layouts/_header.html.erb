@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="header_contents">
+      <%= link_to root_path, class:'logo' do %>
+        <h1>Small DIY</h1>
+      <% end %>
+
+      <ul>
+        <% if user_signed_in? %>
+          <li class="new_post">新規投稿</li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class="sign_button sign_in_button">ログイン</li>
+          <li class="sign_button sign_up_button">新規登録</li>
+        <% end %>
+      </ul>
+  </div>
+</header>
+
+
+
+
